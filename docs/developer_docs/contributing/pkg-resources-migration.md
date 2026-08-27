@@ -45,14 +45,11 @@ Some third-party dependencies may still use `pkg_resources`. Monitor your depend
 
 ### Short-term Solution
 
-Pin setuptools to version 80.x to prevent breaking changes:
-
-```python
-# requirements/base.in
-setuptools<81
-```
-
-This prevents the removal of `pkg_resources` while dependent packages are updated.
+Superset previously pinned setuptools to 80.x (`setuptools<81` in `requirements/base.in`)
+to keep `pkg_resources` available. That pin has been lifted: setuptools 82.0.0 removed
+`pkg_resources` altogether and Superset now pins a release from that line (see
+`requirements/base.in`). Any dependency that still imports `pkg_resources` has to be on
+a `pkg_resources`-free release, or pinned to setuptools 81.x or older in isolation.
 
 ### Long-term Solution
 
