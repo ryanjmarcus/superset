@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: If you use this software, please cite it using these metadata.
+title: Apache Superset
+authors:
+  - name: The Apache Software Foundation
+url: https://superset.apache.org
+repository-code: https://github.com/apache/superset
+license: Apache-2.0
